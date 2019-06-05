@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+@import 'variables.scss';
+
+@include mat-core();
+
+$pl-app-primary: mat-palette($primary, 500); 
+$pl-app-accent:  mat-palette($accent, 500);
+$pl-app-warn:    mat-palette($warn, 500);
+$pl-app-background: #fafafa;
+
+
+$pl-app-theme: mat-light-theme($pl-app-primary, $pl-app-accent, $pl-app-warn);
+
+// Insert custom background color
+$bg: map_merge($background, (background: var(--background)));
+$pl-app-theme: map_merge($pl-app-theme, (background: $bg));
+
+// Insert custom foreground color
+$fg: map_merge($foreground, (foreground: var(--foreground)));
+$pl-app-theme: map_merge($pl-app-theme, (foreground: $fg));
+
+@include angular-material-theme($pl-app-theme);

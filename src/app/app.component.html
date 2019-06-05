@@ -1,0 +1,119 @@
+<mat-toolbar>
+  <img src="../assets/images/{{currentTheme.logo}}" alt="{{currentTheme.name}} logo">
+</mat-toolbar>
+<!-- Theme admin -->
+<mat-card>
+  <mat-card-content>
+      <mat-toolbar-row>
+        <h1>Theme settings</h1>
+        <span class="fill-space"></span>
+        <mat-icon class="example-icon">build</mat-icon>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+        <p>Set your custom theme colours below or choose a preset theme.</p>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <mat-form-field>
+        <input matInput placeholder="Primary" type="color" attr.value="{{currentTheme.primary}}"
+          (change)="setColour($event, 'primary')">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Accent" type="color" attr.value="{{currentTheme.accent}}"
+          (change)="setColour($event, 'accent')">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Warn" type="color" attr.value="{{currentTheme.warn}}"
+          (change)="setColour($event, 'warn')">
+      </mat-form-field>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <mat-form-field>
+        <input matInput placeholder="Background" type="color" attr.value="{{currentTheme.background}}"
+          (change)="setColour($event, 'background')">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Foreground" type="color" attr.value="{{currentTheme.foreground}}"
+          (change)="setColour($event, 'foreground')">
+      </mat-form-field>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <ng-container *ngFor="let theme of themes">
+          <button class="app-button" mat-raised-button color="primary" (click)="setTheme(theme.id)">{{theme.name}}</button>
+      </ng-container>
+    </mat-toolbar-row>
+    
+  </mat-card-content>
+</mat-card>
+
+<!-- Pokeball -->
+
+<div id="pokeball"></div>
+
+<!-- Button -->
+<mat-card>
+  <mat-card-content>
+    <h2>Button</h2>
+    <button class="app-button" mat-button>Flat</button>
+    <button class="app-button" mat-raised-button mat-tooltip="This is a tooltip!">Raised</button>
+    <button class="app-button" mat-raised-button color="primary">Primary raised</button>
+    <button class="app-button" mat-raised-button color="accent">Accent raised</button>
+  </mat-card-content>
+</mat-card>
+
+<!-- Chip -->
+<mat-card>
+  <mat-card-content>
+    <h2>Chips</h2>
+    <mat-chip-list>
+      <mat-chip selected="true" color="primary">
+        Primary
+      </mat-chip>
+      <mat-chip selected="true" color="accent">
+        Accent
+      </mat-chip>
+      <mat-chip selected="true" color="warn">
+        Warn
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>
+
+<!-- Checkbox -->
+<mat-card>
+  <mat-card-content>
+    <h2>Checkbox</h2>
+    <mat-checkbox [checked]="true">Checked</mat-checkbox>
+    <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
+  </mat-card-content>
+</mat-card>
+
+<!-- Radio -->
+<mat-card>
+  <mat-card-content>
+    <h2>Radio Button</h2>
+    <mat-radio-button name="symbol">Option 1</mat-radio-button>
+    <mat-radio-button name="symbol">Option 2</mat-radio-button>
+  </mat-card-content>
+</mat-card>
+
+<!-- Input -->
+<mat-card class="app-input-section">
+  <mat-card-content>
+    <h2>Input</h2>
+    <mat-form-field>
+      <input matInput #nickname placeholder="Name" maxlength="50" />
+      <mat-hint align="end">
+        {{nickname.value.length}} / 50
+      </mat-hint>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<router-outlet></router-outlet>

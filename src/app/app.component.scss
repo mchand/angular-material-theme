@@ -1,0 +1,34 @@
+.main-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+.app-sidenav {
+  background-color: #F4F4F4;
+  min-width: 300px;
+}
+
+.mat-toolbar {
+  img {
+    max-height: 50px;
+  }
+
+  &.mat-toolbar-single-row {
+    border-bottom: 3px solid var(--primary);
+  }
+}
+
+h1 {
+  display: inline-block;
+}
+
+.mat-card {
+  margin: 32px;
+}
+
+button, .mat-checkbox, .mat-radio-button {
+  margin-right: 16px;
+}
