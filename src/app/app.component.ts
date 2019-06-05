@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class AppComponent implements OnInit {
   title = 'practice-labs';
-  currentTheme: {};
+  currentTheme: any;
   opened: boolean;
   themes: Array<any>;
 
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     document.documentElement.style.setProperty('--' + property , value);
   }
 
-  private setColour(e, colour) {
+  public setColour(e, colour) {
     this.setCssVar(colour, e.target.value);
   }
 
