@@ -16,29 +16,29 @@
 
     <mat-toolbar-row>
       <mat-form-field>
-        <input matInput placeholder="Primary" type="color" attr.value="{{currentTheme.primary}}"
+        <input matInput placeholder="Primary {{currentTheme.primary}}" type="color" attr.value="{{currentTheme.primary}}"
           (change)="setColour($event, 'primary')">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Accent" type="color" attr.value="{{currentTheme.accent}}"
+        <input matInput placeholder="Accent {{currentTheme.accent}}" type="color" attr.value="{{currentTheme.accent}}"
           (change)="setColour($event, 'accent')">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Warn" type="color" attr.value="{{currentTheme.warn}}"
+        <input matInput placeholder="Warn {{currentTheme.warn}}" type="color" attr.value="{{currentTheme.warn}}"
           (change)="setColour($event, 'warn')">
       </mat-form-field>
     </mat-toolbar-row>
 
     <mat-toolbar-row>
       <mat-form-field>
-        <input matInput placeholder="Background" type="color" attr.value="{{currentTheme.background}}"
+        <input matInput placeholder="Background {{currentTheme.background}}" type="color" attr.value="{{currentTheme.background}}"
           (change)="setColour($event, 'background')">
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Foreground" type="color" attr.value="{{currentTheme.foreground}}"
+        <input matInput placeholder="Foreground {{currentTheme.foreground}}" type="color" attr.value="{{currentTheme.foreground}}"
           (change)="setColour($event, 'foreground')">
       </mat-form-field>
     </mat-toolbar-row>

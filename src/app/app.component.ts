@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
 
   public setColour(e, colour) {
     this.setCssVar(colour, e.target.value);
+    this.currentTheme[colour] = e.target.value;
   }
 
   private setTheme(id:number) {
